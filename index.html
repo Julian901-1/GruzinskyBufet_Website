@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Грузинский буфет - Москва, м. Новогиреево</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sand: {
+                            100: '#f5e6d3',
+                            200: '#e8d4b8',
+                            300: '#d4a574',
+                            400: '#c19563',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .glass-dark {
+            background: rgba(139, 69, 19, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .ornament-stripe {
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                #8b4513 0px,
+                #8b4513 10px,
+                #d4a574 10px,
+                #d4a574 20px,
+                #cd853f 20px,
+                #cd853f 30px
+            );
+            border-top: 3px solid #654321;
+            border-bottom: 3px solid #654321;
+        }
+        .vine-container {
+            position: fixed;
+            top: 0;
+            height: 100%;
+            width: 80px;
+            opacity: 0.3;
+            z-index: 1;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .vine-left {
+            left: 10px;
+            animation: sway-left 6s ease-in-out infinite;
+        }
+        .vine-right {
+            right: 10px;
+            animation: sway-right 6s ease-in-out infinite;
+        }
+        .vine-branch {
+            width: 4px;
+            background: linear-gradient(to bottom, #6b4423, #8b5a3c);
+            border-radius: 2px;
+            position: relative;
+            flex: 1;
+            min-height: 100%;
+        }
+        .vine-leaf {
+            position: absolute;
+            font-size: 2.5rem;
+            transform-origin: center;
+        }
+        .vine-grape {
+            position: absolute;
+            font-size: 2rem;
+            transform-origin: center;
+        }
+        @keyframes sway-left {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(5px) rotate(2deg); }
+        }
+        @keyframes sway-right {
+            0%, 100% { transform: translateX(0) rotate(0deg); }
+            50% { transform: translateX(-5px) rotate(-2deg); }
+        }
+        @media (max-width: 640px) {
+            .vine-container {
+                display: none;
+            }
+        }
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .vine-container {
+                width: 60px;
+                opacity: 0.25;
+            }
+            .vine-left {
+                left: 5px;
+            }
+            .vine-right {
+                right: 5px;
+            }
+            .vine-leaf {
+                font-size: 2rem;
+            }
+            .vine-grape {
+                font-size: 1.7rem;
+            }
+        }
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2.5rem !important;
+            }
+            header p {
+                font-size: 0.9rem !important;
+            }
+            .ornament-stripe {
+                height: 15px;
+            }
+            main {
+                padding-left: 0.75rem;
+                padding-right: 0.75rem;
+            }
+            .glass, .glass-dark {
+                padding: 1rem !important;
+            }
+            #routeBtn {
+                padding: 1.25rem 2rem !important;
+                font-size: 1.25rem !important;
+            }
+            #routeBtn div:first-child {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-sand-100 via-sand-200 to-sand-100 min-h-screen">
+
+    <!-- Vine Decorations - Left Side -->
+    <div class="vine-container vine-left">
+        <div class="vine-branch">
+            <span class="vine-leaf" style="top: 5%; left: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 12%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 18%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 25%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 32%; left: -15px;">🍃</span>
+            <span class="vine-leaf" style="top: 38%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 45%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 52%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 58%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 65%; left: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 72%; right: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 78%; left: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 85%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 92%; right: -15px;">🍃</span>
+        </div>
+    </div>
+
+    <!-- Vine Decorations - Right Side -->
+    <div class="vine-container vine-right">
+        <div class="vine-branch">
+            <span class="vine-leaf" style="top: 8%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 15%; right: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 22%; left: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 28%; right: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 35%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 42%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 48%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 55%; right: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 62%; left: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 68%; right: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 75%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 82%; left: -20px;">🍇</span>
+            <span class="vine-leaf" style="top: 88%; right: -15px;">🍃</span>
+            <span class="vine-grape" style="top: 95%; right: -20px;">🍇</span>
+        </div>
+    </div>
+
+    <!-- Ornament Stripe Top -->
+    <div class="ornament-stripe"></div>
+
+    <!-- Header -->
+    <header class="glass-dark text-white py-8 shadow-xl">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-6xl font-bold mb-3 tracking-tight">Грузинский буфет</h1>
+            <p class="text-lg md:text-xl text-sand-100 mb-2">📍 Москва, Федеративный просп., 16, корп. 1 (метро Новогиреево)</p>
+            <p class="text-xl md:text-2xl font-medium text-yellow-200 italic">Готовим очень вкусно и по-домашнему</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <!-- Route Button -->
+        <div class="text-center mb-12">
+            <button id="routeBtn" class="group bg-sand-300 hover:bg-sand-400 text-gray-800 font-bold py-6 px-12 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 border-2 border-amber-700">
+                <div class="text-2xl md:text-3xl">Построить маршрут</div>
+                <div class="text-sm md:text-base text-gray-600 opacity-70 mt-1">Яндекс.Карты</div>
+            </button>
+        </div>
+
+        <!-- Menu Section -->
+        <section class="mb-12">
+            <h2 class="text-4xl font-bold text-center mb-8 text-amber-900">Наше меню</h2>
+
+            <!-- Menu Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Выпечка -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🥖</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Выпечка</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Хачапури по-аджарски</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Хачапури по-имеритински</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Хачапури по-мегрельски</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Хачапури царский</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Хачапури с картошкой и сыром</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Лобмани</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Пирожок с картошкой</li>
+                    </ul>
+                </div>
+
+                <!-- Хинкали -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🥟</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Хинкали</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Классические (5 шт.)</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>С сыром (5 шт.)</li>
+                    </ul>
+                </div>
+
+                <!-- Салаты -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🥗</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Салаты</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Овощной по-грузински</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>По-грузински с орехами</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Теплый с баклажаном</li>
+                    </ul>
+                </div>
+
+                <!-- Холодные закуски -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🍆</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Холодные закуски</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Аджапсандали</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Баклажановый рулет с орехами</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Пхали ассорти</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Сациви из курицы</li>
+                    </ul>
+                </div>
+
+                <!-- Супы -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🍲</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Супы</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Борщ с говядиной</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Куриный с лапшой</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Харчо</li>
+                    </ul>
+                </div>
+
+                <!-- Горячие блюда -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🍖</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Горячие блюда</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Лобио</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Оджахури со свининой</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Чахохбили из курицы</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Чашушули</li>
+                    </ul>
+                </div>
+
+                <!-- Напитки -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🥤</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Напитки</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Кока-кола</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Морс собственного приготовления</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Лимонад Натахтари</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Боржоми</li>
+                    </ul>
+                </div>
+
+                <!-- Горячие напитки / десерты -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">☕</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Десерты</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Чай</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Чай (Королевский чайник)</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Наполеон</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Кофейное пирожное</li>
+                    </ul>
+                </div>
+
+                <!-- Соусы + Гарниры -->
+                <div class="glass rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div class="flex items-center gap-3 mb-4 border-b-2 border-sand-300 pb-3">
+                        <span class="text-4xl">🥫</span>
+                        <h3 class="text-2xl font-bold text-amber-800">Соусы и гарниры</h3>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Сацибели / Тар-тар</li>
+                        <li class="flex items-start"><span class="text-sand-400 mr-2">◆</span>Картофель фри</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="glass-dark text-white py-8 mt-12">
+        <div class="ornament-stripe"></div>
+        <div class="max-w-6xl mx-auto px-4 text-center mt-6">
+            <p class="text-lg mb-2">По вопросам сотрудничества: <a href="tel:+79166435494" class="text-yellow-300 hover:text-yellow-200 font-semibold transition-colors">+7 (916) 643-54-94</a></p>
+            <p class="text-sand-200">Website since 2025 • Приходите к нам на вкусную домашнюю грузинскую кухню!</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
